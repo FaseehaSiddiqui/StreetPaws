@@ -16,3 +16,4 @@ Street Paws is a community-driven React application designed to bridge the gap b
 * **Routing:** React Router DOM
 * **Styling:** Custom CSS with CSS Variables for theme consistency
 * **Icons:** Custom image icons for a professional UI
+* **Backend** Firebase Authentication & Firestore database
