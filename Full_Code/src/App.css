@@ -1,0 +1,492 @@
+/* App.css 
+Faseeha Siddiqui 251723892 & Ilsa Rehan*/
+
+:root {
+  --primary: #FF8C42;    
+  --secondary: #6D597A;  
+  --bg-color: #FFF8F0;   
+  --white: #ffffff;
+  --text: #333333;
+}
+
+/*adding the background image and making sure it stays static if user scrolls*/
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+
+ background-image: url('./../public/animal_help.jpeg');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.40; 
+  z-index: -1;
+}
+/*making sure the background is transparent so the text on top can be seen*/
+.dashboard-container, .home-wrapper, .view-reports-container {
+  background-color: transparent !important;
+}
+
+
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #FFF8F0;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10%;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-logo {
+/* this here Aligns image and text in a row */
+  display: flex;     
+  align-items: center; 
+ /* Adds space between the logo and the text */
+  gap: 10px;          
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* This targets the <img> tag specifically inside the nav-logo link and makes sure the icons size is appropriate */
+.nav-logo img {
+  width: 50px;       
+  height: auto;      
+  display: block;    
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+/* Cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 24px; 
+  padding: 30px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); 
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); 
+}
+
+.btn-report {
+  background: linear-gradient(135deg, #FF8C42, #f06c15); /* Subtle gradient */
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+  /* This line removes the underline */
+  text-decoration: none !important; 
+  
+ 
+  color: white !important;
+  /* Adding padding and radius to keep the button shape */
+  padding: 12px 28px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box; 
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 80vh; 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* here adding a Responsive fix so if screen is small it deals with it properly */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-links {
+    font-size: 0.8rem;
+    gap: 10px;
+  }
+} 
+
+/* The soft orange "Community-Powered" badge */
+.hero-badge {
+  background: #fff5eb;
+  color: #f97316;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* styling for the How It Works section */
+.how-it-works-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.step-card {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 24px;
+  text-align: center;
+  position: relative; /* Necessary for the orange number positioning */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid #fdf2f2;
+}
+
+/* The Orange Step Numbers (1, 2, 3, 4) */
+.step-number {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #f97316;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+}
+
+/* font for home page */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.orange-text {
+  color: #f97316;
+}
+
+/* Layout for home page */
+.home-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-description {
+  max-width: 650px;
+  margin: 24px auto;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px;
+}
+
+.secondary-btn {
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  color: #475569;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* adding more styling to how it works section to make the icons look professional */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; 
+  margin-bottom: 20px;
+}
+
+.step-icon {
+  width: 80px;      
+  height: 80px;     
+  object-fit: contain; 
+}
+
+.step-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.step-desc {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* orange bottom banner at the bottom in the home page */
+.orange-banner {
+  background: linear-gradient(135deg, #f9c69d, #f97316); 
+  border-radius: 32px; 
+  padding: 80px 40px; 
+  margin: 60px 0; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+}
+
+.banner-icon-container {
+  margin-bottom: 20px; 
+  display: flex; 
+  justify-content: center; 
+  width: 100%; 
+}
+
+.banner-image {
+  width: 220px; 
+  height: auto; 
+  display: block; 
+}
+
+.orange-banner h2 {
+  color: white; 
+  font-size: 2.8rem; 
+  font-weight: 700; 
+  margin: 10px 0; 
+}
+
+.banner-desc {
+  margin: 10px auto 40px; 
+  opacity: 0.9; 
+  font-size: 1.2rem; 
+  max-width: 700px; 
+  color: white; 
+}
+
+.banner-buttons {
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+.white-btn {
+  background: white; 
+  color: #f97316 !important; 
+  padding: 14px 28px; 
+  border-radius: 12px; 
+  font-weight: bold; 
+  text-decoration: none; 
+  transition: 0.3s ease; 
+}
+
+.white-btn:hover {
+  background: #fff5eb;
+  transform: translateY(-2px);
+}
+
+.outline-btn {
+  background: transparent; 
+  border: 2px solid white; 
+  color: white !important; 
+  padding: 12px 28px; 
+  border-radius: 12px; 
+  font-weight: bold; 
+  text-decoration: none; 
+  transition: 0.3s ease;
+}
+
+.outline-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Dashboard Layout */
+.dashboard-container { padding: 40px; background-color: #fdfaf5; min-height: 100vh; }
+
+.welcome-banner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 40px; border-radius: 20px; background: white; margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white; padding: 20px; border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: left;
+}
+
+.stat-card h3 { font-size: 2rem; margin: 10px 0 0 0; }
+.stat-card.pending h3 { color: #f97316; }
+.stat-card.progress h3 { color: #3b82f6; }
+.stat-card.resolved h3 { color: #22c55e; }
+
+/* Report Cards for the animals */
+.reports-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+
+.report-card { background: white; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.report-card img { width: 100%; height: 200px; object-fit: cover; }
+
+.report-badge {
+  position: absolute; top: 15px; right: 15px; background: #e0f2fe; color: #0369a1;
+  padding: 5px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: bold;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #6D597A; 
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 10px;
+}
+
+.logout-btn:hover {
+  color: #f97316; 
+}
+
+/* styling for navigation items if a user is on a particular tab then that tab should be highlighted */
+.nav-item {
+  text-decoration: none;
+  color: #444;
+  padding: 8px 12px;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Highlight style when the tab is being clicked by the user */
+.nav-item.active {
+  background: #f97316;
+  border-radius: 20px;
+  padding: 8px 15px !important;
+  color: white !important;
+}
+
+/* styling for the Dashboard/My Reports tab */
+.dashboard-tab {
+  background: #fff3e0; 
+  border-radius: 20px;
+  padding: 8px 15px !important;
+}
+
+.dashboard-tab.active {
+  background: #f97316;
+  color: white !important;
+  border-bottom: none; 
+}
+
+/*contact NGOS cards and container*/
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  
+  background: rgba(255, 255, 255, 0.85) !important; 
+
+  border-radius: 40px; 
+
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure cards inside the container stay solid white and separate so its easier for the user to see */
+.container .card, .container .ngo-card {
+  background: #ffffff !important;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  display: block;
+}
