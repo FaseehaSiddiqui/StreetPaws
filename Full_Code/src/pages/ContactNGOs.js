@@ -43,7 +43,7 @@ const ContactNGOs = () => {
 
   return (
     <div className="container" style={{ padding: '40px 20px' }}>
-      {/* Header Section based on your Screenshot */}
+      {/* Header Section  */}
       <div style={{ textAlign: 'center', marginBottom: '50px' }}>
         <span style={{ 
           background: '#fff3e0', color: '#e65100', padding: '8px 16px', borderRadius: '20px', fontSize: '0.9rem', fontWeight: 'bold' 
@@ -133,5 +133,6 @@ const ContactNGOs = () => {
     </div>
   );
 };
+
 
 export default ContactNGOs;
